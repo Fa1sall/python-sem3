@@ -6,7 +6,6 @@ using namespace std;
 int main(){
 
     int i,size;
-
     cout<<"Enter array size: "<<endl;
     cin>>size;
     int nums[size];
