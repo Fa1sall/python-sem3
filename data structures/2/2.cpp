@@ -20,4 +20,5 @@ int main(){
             cout<<endl<<text[i];
         }
     }
+    return 0;
 }
