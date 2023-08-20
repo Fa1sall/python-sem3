@@ -21,8 +21,9 @@ int main(){
         }
     }
 
-    cout<<"\n------Done By:-------";
-    cout<<"\nFaisal Irfan"<<endl;
+    cout<<"\n";
+    cout<<"------Done By:-------"<<endl;
+    cout<<"Faisal Irfan"<<endl;
     cout<<"220071601063"<<endl;
     cout<<"B.Tech CSE - A"<<endl;
     return 0;
