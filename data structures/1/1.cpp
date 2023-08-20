@@ -30,7 +30,4 @@ int main(){
     cout<<"The maximum value is: "<<max<<endl;
     cout<<"The minimum value is: "<<min<<endl;
 
-    
-
-
 }
