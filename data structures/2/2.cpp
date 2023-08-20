@@ -20,5 +20,8 @@ int main(){
             cout<<endl<<text[i];
         }
     }
+
+    cout<<"Faisal Irfan"<<endl;
+    cout<<"RRN : 220071601063"<<endl;
     return 0;
 }
