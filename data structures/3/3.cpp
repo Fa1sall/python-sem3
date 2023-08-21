@@ -3,46 +3,81 @@
 #include<iostream>
 using namespace std;
 
-void Create(){
-    int i,size;
-    cout<<"Enter size of array: "<<endl;
-    cin>>size;
-    int arr[size];
-    
-    cout<<"Enter the elements: "<<endl;
-    for(i=0;i<size;i++){
-    cin>>arr[i];
-}
-}
-
-void Display(int arr[]){
-    int size = sizeof(arr)/sizeof(arr[0]);
+void Display(int n,int arr[]){
     cout<<"[";
-    for(int i=0; i<size; i++){
-    cout<<arr[i]<<",";
+    for(int i=0; i<n; i++){
+    cout<<arr[i]<<" ";
     }
-    cout<<"]";
+    cout<<"]"<<endl;
 }
 
-void Insert(int arr[]){
-    int pos,x;
-    int size = sizeof(arr)/sizeof(arr[0]);
-    cout<<"Enter position of element to be inserted: ";
-    cin>>pos;
-    cout<<endl<<"Enter element: ";
-    cin>>x;
-
+void Insert(int arr[],int size,int pos,int x){
+    
     for(int i=0; i<size; i++){
-        arr[pos+1]=arr[pos];
+        arr[pos]=arr[pos+1];
         arr[pos]=x;
     }
 }
 
+void Delete(int arr[],int n,int pos){
+    
+   int i,j;
+    for (i = 0; i < n; i++) {
+        if (arr[i] == pos) {
+            break;
+        }
+    }
+ 
+    if (i < n) {
+        n--;
+        for (int j = i; j < n; j++) {
+            arr[j] = arr[j + 1];
+        }
+    }
+}
+
 int main(){
+	
+	int i,size,n,pos,x;
+    cout<<"Enter size of array: "<<endl;
+    cin>>size;
+    int arr[size];
+
+    cout<<"Enter number of array elements to be inserted: "<<endl;
+    cin>>n;
+    
+    cout<<"Enter the elements: "<<endl;
+    for(i=0;i<n;i++){
+    cin>>arr[i];
+	}
 
     int input;
-    cout<<"Enter '1' to create an array: \n"<<"Enter '2' to Display array: \n";
-    cout<<"Enter '3' to insert element: \n"<<"Enter '4' to remove element: \n";
+    while(true){
+    cout<<"Enter '1' to Display array: \n"<<"Enter '2' to insert element: \n";
+    cout<<"Enter '3' to remove element: \n"<<"Enter 'E' to Exit: \n";
     cout<<"Select an option: "<<endl; cin>>input;
-
+    
+    if(input==1){
+    	Display(n,arr);
+	}
+	
+	else if(input==2){
+		cout<<"Enter index of element to be inserted: "<<endl;
+		cin>>pos;
+		cout<<"Enter element: "<<endl;
+		cin>>x;	
+        Insert(arr,size,pos,x);	
+	}
+	
+	else if(input==3){
+		cout<<"Enter index of element to be deleted:"<<endl;
+		cin>>pos;
+		Delete(arr,n,pos);	
+	}
+		else{
+		break;
+		}
+    }
+    return 0;
 }
+    
