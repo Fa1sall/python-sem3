@@ -11,19 +11,20 @@ void Display(int n,int arr[]){
     cout<<"]"<<endl;
 }
 
-void Insert(int arr[],int size,int pos,int x){
+void Insert(int arr[],int n,int pos,int x){
     
-    for(int i=0; i<size; i++){
+    for(int i=0; i<n; i++){
         arr[pos]=arr[pos+1];
         arr[pos]=x;
+        n++;
     }
 }
 
 void Delete(int arr[],int n,int pos){
     
-   int i,j;
+   int i;
     for (i = 0; i < n; i++) {
-        if (arr[i] == pos) {
+        if (i == pos) {
             break;
         }
     }
