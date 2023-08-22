@@ -39,7 +39,7 @@ void Delete(int arr[],int n,int pos){
 
 int main(){
 	
-	int i,size,n,pos,x;
+	int i,size,n,pos,x,p,q,r;
     cout<<"Enter size of array: "<<endl;
     cin>>size;
     int arr[size];
