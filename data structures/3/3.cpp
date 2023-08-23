@@ -18,19 +18,7 @@ void Insert(int x,int pos,int n,int arr[]){
     arr[pos]=x;
 }
 
-void Delete(int pos,int n,int arr[]){
-    
-    for(int i=0;i<n;i++){
-        if(arr[i]==arr[pos]){
-            break;
-        }
-        if(i<n){
-            n--;
-            for(int i=0;i<n;i++){
-                arr[i]=arr[i+1];
-            }
-        }
-    }
+void Delete(int pos,int n,int arr[]){  
 }
 
 int main(){
@@ -66,6 +54,13 @@ int main(){
         cout<<"Enter index of element to be deleted:"<<endl;
         cin>>pos;
         Delete(pos,n,arr);
+    }
+    else if(input==4){
+        cout<<"Exited"<<endl;
+        break;
+    }
+    else{
+        cout<<"Enter valid option"<<endl;
     }
     }
  
