@@ -11,74 +11,45 @@ void Display(int n,int arr[]){
     cout<<"]"<<endl;
 }
 
-void Insert(int arr[],int n,int pos,int x){
-    
-    for(int i=0; i<n; i++){
-        arr[pos]=arr[pos+1];
-        arr[pos]=x;
-        n++;
+void Insert(int x,int pos,int n,int arr[]){
+    for(int i=n;i>=pos+1;i--){
+        arr[i]=arr[i-1];
     }
-}
-
-void Delete(int arr[],int n,int pos){
-    
-   int i;
-    for (i = 0; i < n; i++) {
-        if (i == pos) {
-            break;
-        }
-    }
- 
-    if (i < n) {
-        n--;
-        for (int j = i; j < n; j++) {
-            arr[j] = arr[j + 1];
-        }
-    }
+    arr[pos]=x;
 }
 
 int main(){
-	
-	int i,size,n,pos,x,p,q,r;
-    cout<<"Enter size of array: "<<endl;
+    int i,x,n,size,pos,input;
+    cout<<"Enter size of array:"<<endl;
     cin>>size;
     int arr[size];
-
-    cout<<"Enter number of array elements to be inserted: "<<endl;
+    cout<<"Enter number of elements to be inserted:"<<endl;
     cin>>n;
-    
     cout<<"Enter the elements: "<<endl;
     for(i=0;i<n;i++){
     cin>>arr[i];
 	}
 
-    int input;
     while(true){
     cout<<"Enter '1' to Display array: \n"<<"Enter '2' to insert element: \n";
     cout<<"Enter '3' to remove element: \n"<<"Enter 'E' to Exit: \n";
-    cout<<"Select an option: "<<endl; cin>>input;
-    
+    cout<<"Select an option: "<<endl; 
+    cin>>input;
+
     if(input==1){
-    	Display(n,arr);
-	}
-	
-	else if(input==2){
-		cout<<"Enter index of element to be inserted: "<<endl;
-		cin>>pos;
-		cout<<"Enter element: "<<endl;
-		cin>>x;	
-        Insert(arr,size,pos,x);	
-	}
-	
-	else if(input==3){
-		cout<<"Enter index of element to be deleted:"<<endl;
-		cin>>pos;
-		Delete(arr,n,pos);	
-	}
-		else{
-		break;
-		}
+        Display(n,arr);
     }
-    return 0;
+    else if(input==2){
+        n++;
+        cout<<"Enter position of element to be inserted:"<<endl;
+        cin>>pos;
+        cout<<"Enter element to be inserted:"<<endl;
+        cin>>x;
+        Insert(x,pos,n,arr); 
+    }
+    else{
+        break;
+    }
+    }
+ 
 }
-    
