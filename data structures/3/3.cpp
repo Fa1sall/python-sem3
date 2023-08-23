@@ -18,6 +18,21 @@ void Insert(int x,int pos,int n,int arr[]){
     arr[pos]=x;
 }
 
+void Delete(int pos,int n,int arr[]){
+    
+    for(int i=0;i<n;i++){
+        if(arr[i]==arr[pos]){
+            break;
+        }
+        if(i<n){
+            n--;
+            for(int i=0;i<n;i++){
+                arr[i]=arr[i+1];
+            }
+        }
+    }
+}
+
 int main(){
     int i,x,n,size,pos,input;
     cout<<"Enter size of array:"<<endl;
@@ -41,14 +56,16 @@ int main(){
     }
     else if(input==2){
         n++;
-        cout<<"Enter position of element to be inserted:"<<endl;
+        cout<<"Enter index of element to be inserted:"<<endl;
         cin>>pos;
         cout<<"Enter element to be inserted:"<<endl;
         cin>>x;
         Insert(x,pos,n,arr); 
     }
-    else{
-        break;
+    else if(input==3){
+        cout<<"Enter index of element to be deleted:"<<endl;
+        cin>>pos;
+        Delete(pos,n,arr);
     }
     }
  
