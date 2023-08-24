@@ -1,1 +1,1 @@
-# python-sem3
+# sem-3-programs
