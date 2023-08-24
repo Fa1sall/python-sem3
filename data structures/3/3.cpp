@@ -18,7 +18,10 @@ void Insert(int x,int pos,int n,int arr[]){
     arr[pos]=x;
 }
 
-void Delete(int pos,int n,int arr[]){  
+void Delete(int pos,int n,int arr[]){ 
+    for(int i=pos;i<n-1;i++){
+        arr[i]=arr[i+1];
+    }
 }
 
 int main(){
@@ -34,8 +37,8 @@ int main(){
 	}
 
     while(true){
-    cout<<"Enter '1' to Display array: \n"<<"Enter '2' to insert element: \n";
-    cout<<"Enter '3' to remove element: \n"<<"Enter 'E' to Exit: \n";
+    cout<<"Enter '1' to Display array: \n"<<"Enter '2' to Insert element: \n";
+    cout<<"Enter '3' to Delete element: \n"<<"Press any character to exit: \n";
     cout<<"Select an option: "<<endl; 
     cin>>input;
 
@@ -48,20 +51,23 @@ int main(){
         cin>>pos;
         cout<<"Enter element to be inserted:"<<endl;
         cin>>x;
-        Insert(x,pos,n,arr); 
-    }
+        Insert(x,pos,n,arr);      
+     }
     else if(input==3){
         cout<<"Enter index of element to be deleted:"<<endl;
         cin>>pos;
         Delete(pos,n,arr);
-    }
-    else if(input==4){
-        cout<<"Exited"<<endl;
-        break;
+        n--;
     }
     else{
-        cout<<"Enter valid option"<<endl;
+        cout<<"Exited"<<endl;
+        break;
+        cout<<"\n";
+        cout<<"------Done By:-------"<<endl;
+        cout<<"Faisal Irfan"<<endl;
+        cout<<"220071601063"<<endl;
+        cout<<"B.Tech CSE - A"<<endl;
     }
     }
- 
+    return 0;
 }
