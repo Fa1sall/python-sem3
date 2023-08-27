@@ -37,6 +37,7 @@ int main(){
 	}
 
     while(true){
+    cout<<"Array Operations: \n";
     cout<<"Enter '1' to Display array: \n"<<"Enter '2' to Insert element: \n";
     cout<<"Enter '3' to Delete element: \n"<<"Press any character to exit: \n";
     cout<<"Select an option: "<<endl; 
@@ -60,13 +61,11 @@ int main(){
         n--;
     }
     else{
-        cout<<"Exited"<<endl;
-        break;
-        cout<<"\n";
-        cout<<"------Done By:-------"<<endl;
+        cout<<"\n------Done By:-------"<<endl;
         cout<<"Faisal Irfan"<<endl;
         cout<<"220071601063"<<endl;
         cout<<"B.Tech CSE - A"<<endl;
+        break;
     }
     }
     return 0;
