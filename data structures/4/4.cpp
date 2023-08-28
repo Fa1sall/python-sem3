@@ -1,3 +1,5 @@
+//Array Addition and Multiplication
+
 #include<iostream>
 using namespace std;
 
@@ -56,7 +58,12 @@ int main(){
 	}
 	
 	//Multiplying two matrices
-	mult[i][j] = 0;
+	for(i = 0; i < r1; i++)
+        for(j = 0; j < c2; j++)
+        {
+            mult[i][j]=0;
+        }
+        
 	for(i=0;i<r1;i++){
 		for(j=0;j<c2;j++){
 			for(k=0;k<c1;k++){
