@@ -85,6 +85,5 @@ int main(){
     cout<<"Faisal Irfan"<<endl;
     cout<<"220071601063"<<endl;
     cout<<"B.Tech CSE - A"<<endl;
-	
 	return 0;
 }
