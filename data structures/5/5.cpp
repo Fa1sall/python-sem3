@@ -50,7 +50,7 @@ int main(){
     int stk[size];
 
     while(true){
-        cout<<"Stack Operations:"<<endl;
+        cout<<"-----Stack Operations:-----"<<endl;
         cout<<"1)Push "<<"2)Pop"<<endl;
         cout<<"3)Peek "<<"4)Display"<<endl;
         cout<<"5)Exit"<<endl;
@@ -99,4 +99,5 @@ int main(){
         }
     }
 
+    return 0;
 }
