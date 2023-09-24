@@ -1,9 +1,12 @@
-def factorial(num):
-    fact=1
-    for i in range(1,num+1):
-        fact=fact*i
-    return fact
-number=int(input("Please enter a number to find factorial:"))
-result=factorial(number)
-print("The factorial of" , number , "=" , result)
+#nth term of Fibonacci series
 
+def fibonacci(n):
+    if n==1:
+        return 0
+    elif n==2:
+        return 1
+    else:
+        return (fibonacci(n-1)+fibonacci(n-2))
+
+s = int(input("Enter the position of the term: "))
+print(fibonacci(s))

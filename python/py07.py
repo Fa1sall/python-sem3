@@ -1,19 +1,23 @@
-#Fibonacci series
+#Semester marks
 
-n=int(input("How many terms? "))
-n1,n2=0,1
-count=0
+max=sub=0
+for i in range (1,4):
+    print("Enter Sem -",i," marks:")
+    print("---------------------")
+    for j in range(1,4):
+        print("Enter Subject -",j," mark:")
+        x = int(input())
+        if(x>100 or x<0):
+            print("You have entered invalid marks")
+            print("Enter Subject -",j," mark:")
+            x = int(input())
+            if(x>max):
+                max=x
+                sub=i
+        else:
+            if(x>max):
+                max=x
+                sub=i
+    print("Maximum marks scored in Sem -",i,":")
+    print("Subject - ",sub,": ",max)
 
-if(n<=0):
-    print("Enter a positive number")
-elif(n==1):
-    print("Fibonacci series: ")
-    print(n1)
-else:
-    print("Fibonacci series :")
-    while count<n:
-        print(n1)
-        temp=n1+n2
-        n1=n2
-        n2=temp
-        count +=1

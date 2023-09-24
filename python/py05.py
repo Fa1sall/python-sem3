@@ -1,9 +1,10 @@
-a=int(input("Enter a number A:"))
-b=int(input("Enter a number B:"))
-c=int(input("Enter a number C:"))
-if a>b and a>c:
-    print("a is the greatest")
-if b>a and b>c:
-    print("b is the greatest")
-else:
-    print("c is the greatest")
+#Factorial of a number
+
+def factorial(num):
+    fact=1
+    for i in range(1,num+1):
+        fact=fact*i
+    return fact
+number=int(input("Enter number:"))
+result=factorial(number)
+print("The factorial of is:",result)

@@ -1,8 +1,11 @@
-num=float(input("enter a number:"))
-if num>=0:
-    if num==0:
-        print("zero")
-    else:
-        print("positive number")
+#Perfect number
+
+n = int(input("Enter a number: "))
+sum = 0
+for i in range(1,n):
+    if(n%i==0):
+        sum+=i
+if(sum==n):
+    print(n," is a perfect number")
 else:
-    print("negative number")
+    print(n," is not a perfect number")
