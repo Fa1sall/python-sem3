@@ -3,92 +3,100 @@
 #include<iostream>
 using namespace std;
 
-void Display(int top,int arr[]){
-    cout<<"-";
-    for(int i=top; i<=0; i--){
-    cout<<arr[i]<<endl;;
+void Display(int stk[],int n){
+    if(n==0){
+        cout<<" "<<"<-TOP"<<endl;
     }
-    cout<<"-"<<endl;
-}
-
-void Push(int x,int top,int size,int arr[]){
-    if(top==size){
-        cout<<"Stack Overflow Error \n";
-    }
-    arr[top+1] = x;
-}
-
-void Pop(int top,int arr[]){
-    if(top==0){
-        cout<<"Stack Underflow Error \n";
+    else if(n==1){
+        cout<<stk[0]<<"<-TOP"<<endl;
     }
     else{
-        top--;
+        cout<<stk[n-1]<<" <-TOP"<<endl;
+        for(int i=n-2;i>=0;i--){
+            cout<<stk[i]<<endl;
+            }
+    }
+    
+}
+
+void Push(int stk[],int n,int size,int x){
+    stk[n-1]=x;
+}
+
+void Pop(int stk[],int n){
+    if(n==0){
+        cout<<"Stack underflow Error!"<<endl;cout<<"\n";
+    }
+    else{
+        cout<<"Element Popped!"<<endl;cout<<"\n";
+    }
+}
+
+void Peek(int stk[],int n){
+    if(n==0){
+        cout<<"No element present"<<endl;
+    }
+    else{
+        cout<<"Top element :"<<stk[n-1]<<endl;
     }
 
 }
 
-void Peek(int top,int arr[]){
-    cout<<"Top ---> "<<arr[top];
-}
-
-
 int main(){
+    int x,size,n=0,input;
 
-    int n,x,size,input;
-
-    cout<<"Enter size of stack: "<<endl;
+    cout<<"Enter size of the stack: "<<endl;
     cin>>size;
-    int arr[size];
-    int top = arr[0];
-    
+    int stk[size];
+
     while(true){
-        cout<<"Stack Operations: \n";
-        cout<<"Enter '1' to Display stack: \n"<<"Enter '2' to Push element: \n";
-        cout<<"Enter '3' to Pop element: \n"<<"Enter '4' for Peek():\n";
-        cout<<"Enter '5' for isEmpty(): \n"<<"Enter '6' for isFull()\n";
-        cout<<"Press any character to exit: \n";
-        cout<<"Select an option: "<<endl; 
-        cin>>input;
-        
+        cout<<"Stack Operations:"<<endl;
+        cout<<"1)Push "<<"2)Pop"<<endl;
+        cout<<"3)Peek "<<"4)Display"<<endl;
+        cout<<"5)Exit"<<endl;
+        cout<<"Input: ";cin>>input;cout<<endl;
+
         if(input==1){
-            Display(n,arr);
+            cout<<"Enter element:";cin>>x;
+            if(n<size){
+                n++;
+                Push(stk,n,size,x);
+            }
+            else{
+                cout<<"Stack Overflow Error!"<<endl;
             }
             
+            
+        }
+
         else if(input==2){
-            n++;
-            cout<<"Enter element to be pushed:"<<endl;
-            cin>>x;
-            Push(x,top,size,arr);
-            top++; 
+            Pop(stk,n);
+            if(!n<=0){
+                n--;
             }
-                
+            
+        }
+
         else if(input==3){
-            Pop(top,arr);
-            }
-            
+            Peek(stk,n);
+        }
+
         else if(input==4){
-            Peek(top,arr);
-            }
-            
+            Display(stk,n);
+        }
+
         else if(input==5){
-            if(arr[top]=='\0'){
-                cout<<"The stack is empty"<<endl;
-                }
-            }
-        
-        else if(input==6){
-            if(top+1==size){
-                cout<<"The stack is full"<<endl;
-                }
-            }
-        
+            cout<<"\n------Done By:-------"<<endl;
+            cout<<"Faisal Irfan"<<endl;
+            cout<<"220071601063"<<endl;
+            cout<<"B.Tech CSE - A"<<endl;
+            break;
+        }
+
         else{
-             cout<<"\n------Done By:-------"<<endl;
-             cout<<"Faisal Irfan"<<endl;
-             cout<<"220071601063"<<endl;
-             cout<<"B.Tech CSE - A"<<endl;
-             break;
-            }
-    } 
+            cout<<"Incorrect Input!"<<endl;
+            continue;
+        }
+    }
+
 }
