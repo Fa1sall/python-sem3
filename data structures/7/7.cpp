@@ -14,10 +14,10 @@ void insertAtBeg(int data){
     newnode->data=data;
     newnode->link=head;
     head = newnode;
-    cout<<"\n"<< newnode->data<<" Inserted"<<endl;
+    cout<<"\n"<< newnode->data<<" Inserted at Start."<<endl;
 }
 
-void insertAtEnd(){
+void insertAtEnd(int data){
 	
 }
 
@@ -32,7 +32,16 @@ void Delete(int n){
 }
 
 void Display(){
-	
+	struct node* temp;
+    if(head==NULL){
+        cout<<"The List is Empty."<<endl;
+    }
+    temp = head;
+    while(temp!=NULL){
+        cout<<temp->data<<"->";
+        temp=temp->link;
+    }
+    cout<<endl;
 }
 
 
