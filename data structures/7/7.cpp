@@ -1,3 +1,5 @@
+//Linked List Operations
+
 #include <iostream>
 using namespace std;
 
@@ -47,30 +49,31 @@ void insertAtPos(int data,int x){
 }
 
 void Delete(int x,int n){
-    node* temp = head;
-	if(head==NULL){
-        cout<<"The List is Empty."<<endl;
+    node *temp = head;
+    node *prev;
+    if(temp == NULL){
+        return;
     }
-    else if(x>n || x<1){
-        cout<<"Invalid element position."<<endl;
+    if(x == 1){
+        head = temp->next; 
+        free(temp);     
+        return;
+   }
+   for(int i=1 ; i!=x ; i++){
+    prev = temp;
+    temp = temp->next;
     }
-    else if(x==1){
-        head=head->next;
-    }
-    else if(x==n){
-        while(temp->next->next!=NULL){
-            temp=temp->next;
-        }
-        temp->next=NULL;
-    }
-    else{
-        for(int i=1;i<n;i++){
-            while(temp->next!=NULL){
-                temp=temp->next;
-            }
-        }
-        temp->next=temp->next->next;
-    }
+
+   if(temp == NULL)
+   {
+      cout<<"No Element present\n";
+      return;
+   }
+   else
+   {
+      prev->next = temp->next;
+      free(temp);
+   }
     
 }
 
@@ -120,8 +123,8 @@ int main(){
 
         else if(input==3){
             n++;
-            cout<<"Enter element to be inserted at the Position:";cin>>data;
             cout<<"Enter position of element:";cin>>x;
+            cout<<"Enter element to be inserted at the Position:";cin>>data;
             insertAtPos(data,x);
             cout<<"\n"; 
         }
@@ -129,7 +132,9 @@ int main(){
         else if(input==4){
             cout<<"Enter position of element to be deleted: ";cin>>x;
             Delete(x,n);
-            n--;
+            if(x>=1 && x<=n){
+                n--;
+            }
         }
         
         else if(input==5){
