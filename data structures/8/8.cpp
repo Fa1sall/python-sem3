@@ -99,7 +99,7 @@ int main(){
 
 
     while(true){
-        cout<<"-----Linked List Operations:-----"<<endl;
+        cout<<"-----Doubly Linked List Operations:-----"<<endl;
         cout<<"1)Insert at Start"<<endl;
         cout<<"2)Insert at End"<<endl;
         cout<<"3)Insert at Position"<<endl;
