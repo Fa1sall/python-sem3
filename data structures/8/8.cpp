@@ -12,18 +12,18 @@ struct node* head = NULL;
 
 void insertAtBeg(int data){
 	node* newnode = new node();
-    newnode = (struct node*)malloc(sizeof(struct node*));
     newnode->data=data;
     newnode->next=head;
-    head = newnode;
+    newnode->prev=NULL;
+    head=newnode;   
     cout<<"\n"<< newnode->data<<" Inserted at Start."<<endl;
 }
 
 void insertAtEnd(int data){
     node* newnode = new node();
-    newnode = (struct node*)malloc(sizeof(struct node*));
     newnode->data=data;
-    newnode->next=NULL;
+    node* prev = NULL;
+    node* next = NULL;
     node* temp = head;
     while(temp->next!=NULL){
         temp=temp->next;
@@ -35,10 +35,9 @@ void insertAtEnd(int data){
 
 void insertAtPos(int data,int x){
 	node* newnode = new node();
-    newnode = (struct node*)malloc(sizeof(struct node*));
     newnode->data=data;
     node* temp=head;
-    for(int i=1;i<x;i++){
+    for(int i=2;i<x;i++){
         if(temp->next!=NULL){
             temp=temp->next;
         }
@@ -58,21 +57,20 @@ void Delete(int x,int n){
         cout<<"Invalid element position."<<endl;
     }
     else if(x==1){
+        node *delnode = head;
         head=head->next;
         head->prev=NULL;
+        delete delnode;
     }
     else if(x==n){
-        while(temp->next->next!=NULL){
+        while(temp->next!=NULL){
             temp=temp->next;
         }
-        temp->prev->next=NULL;
-        delete temp;
+        temp->prev->next=temp->next;
     }
     else{
-        for(int i=1;i<n;i++){
-            while(temp->next!=NULL){
-                temp=temp->next;
-            }
+        for(int i=1; temp!=NULL && i<x;i++){
+            temp=temp->next;
         }
         temp->prev->next = temp->next;
         temp->next->prev = temp->prev;
