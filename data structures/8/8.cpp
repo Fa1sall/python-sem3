@@ -10,6 +10,7 @@ struct node{
 
 struct node* head = NULL;
 
+
 void insertAtBeg(int data){
 	node* newnode = new node();
     newnode->data=data;
