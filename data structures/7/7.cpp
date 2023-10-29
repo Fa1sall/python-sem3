@@ -38,7 +38,7 @@ void insertAtPos(int data,int x){
     newnode = (struct node*)malloc(sizeof(struct node*));
     newnode->data=data;
     node* temp=head;
-    for(int i=1;i<x;i++){
+    for(int i=2;i<x;i++){
         if(temp->next!=NULL){
             temp=temp->next;
         }
@@ -125,8 +125,18 @@ int main(){
             n++;
             cout<<"Enter position of element:";cin>>x;
             cout<<"Enter element to be inserted at the Position:";cin>>data;
-            insertAtPos(data,x);
-            cout<<"\n"; 
+            if(x==1){
+                insertAtBeg(data);
+                cout<<"\n"; 
+            }
+            else if(x==n){
+                insertAtEnd(data);
+                cout<<"\n"; 
+            }
+            else{
+                insertAtPos(data,x);
+                cout<<"\n"; 
+            }
         }
 
         else if(input==4){
